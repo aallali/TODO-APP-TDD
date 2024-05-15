@@ -19,8 +19,8 @@ completed).
 ### Todo:
 - [x] : setup skeleton
 - [x] : setup jest for Unite test
-- [ ] : integrate mongoose
-- [ ] : setup DB drivers
-- [ ] : setup jwt auth system (user+pass, **`no email`**)
+- [x] : integrate mongoose
+- [x] : setup DB drivers
+- [x] : setup jwt auth system (user+pass, **`no email`**)
 - [ ] : setup auth middleware and test it
-- [ ] : create unit test for the auth flow
+- [x] : create units tests for the auth flow
