@@ -6,9 +6,9 @@ appealing user interface. Each task should have attributes like title, descripti
 completed).
 
 ## Tech Stack
-- **Ui** : React.Js, TypeScript, Tailwind, Zustand
-- **Server**: Node.Js, TypeScript, Express.Js, Mongoose
-- **Db**: MongoDb
+- **Ui** : `React.Js`, `TypeScript`, `Tailwind`, `Zustand`
+- **Server**: `Node.Js`, `TypeScript`, `Express.Js`, `Mongoose`
+- **Db**: `MongoDb`
 ---
 ## UI
 ### Todo:
@@ -17,7 +17,8 @@ completed).
 ---
 ## Server
 ### Todo:
-- [ ] : setup skeleton
+- [x] : setup skeleton
+- [x] : setup jest for Unite test
 - [ ] : integrate mongoose
 - [ ] : setup DB drivers
 - [ ] : setup jwt auth system (user+pass, **`no email`**)
