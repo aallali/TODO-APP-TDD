@@ -8,8 +8,8 @@ dotenv.config(); // 3afak khdmi
 
 const PORT = process.env.PORT || 4242;
 
-// console.log(process.env.MONGO_URL, process.env.PORT)
-connectDB();
+app.use(express.json());
+
 app.get('/health', (req, res) => {
     res.json({
         status: 'OK',
@@ -18,8 +18,16 @@ app.get('/health', (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'test')
+    (async () => {
+        if (process.env.NODE_ENV !== 'test') {
+            await connectionDB();
+
+            app.listen(PORT, () => {
+                console.log(`Server running on http://localhost:${PORT}`);
+            });
+        }
+
+    })()
 
 export default app;
