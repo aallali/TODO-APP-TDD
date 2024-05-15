@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import connectionDB from './database/config';
+import * as ROUTES from "./routes"
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.get('/health', (req, res) => {
     });
 });
 
+app.use('/api/v1/auth', ROUTES.AuthRoute);
 
 if (process.env.NODE_ENV !== 'test')
     (async () => {
