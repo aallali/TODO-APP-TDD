@@ -1,4 +1,3 @@
-// tests/controllers/authController.test.ts
 import request from 'supertest';
 import mongoose from 'mongoose';
 import app from '../src/index';
@@ -9,18 +8,19 @@ const CONSTANTS = {
     DB_URL: process.env.MONGO_URL_TEST as string
 }
 
-
-
-beforeEach(async () => {
-    await mongoose.connect(process.env.MONGO_URL_TEST as string);
+// init db connection before all
+beforeAll(async () => {
+    await mongoose.connect(CONSTANTS.DB_URL as string);
 });
 
-/* Closing database connection after each test. */
 afterEach(async () => {
     await mongoose.connection.db.dropDatabase()
-    await mongoose.connection.close();
 });
 
+// close & drop db after all tests are done
+afterAll(async () => {
+    await mongoose.connection.close();
+});
 
 
 describe(`POST ${CONSTANTS.API_PREFIX}/signup`, () => {
