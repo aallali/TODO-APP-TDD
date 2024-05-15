@@ -2,12 +2,14 @@ import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 
 import { createUser, isUsernameExists, loginUser } from '../database/drivers/user.driver';
+import { AuthRequest } from '../types';
+
 
 const signUp = async (req: Request, res: Response) => {
     const { username, password } = req.body as { username: string, password: string };
     try {
         const existingUser = await isUsernameExists(username);
-        
+
         if (existingUser) {
             return res.status(400).json({ message: 'User already exists, Safi Ghyrha' });
         }
@@ -42,4 +44,12 @@ const signIn = async (req: Request, res: Response) => {
     }
 };
 
-export { signUp, signIn };
+const whoAmI = async (req: Request, res: Response) => {
+    res.status(200).json({
+        status:'OK',
+        user: (req as AuthRequest).user,
+        message: `Allez Si ${(req as AuthRequest).user.username}, Allez Si Brahim`
+    });
+};
+
+export { signUp, signIn, whoAmI };
