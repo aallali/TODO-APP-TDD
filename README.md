@@ -5,6 +5,7 @@ Create a CRUD application for task management that includes user authentication 
 appealing user interface. Each task should have attributes like title, description, and status (e.g., pending,
 completed).
 
+
 ## Tech Stack
 - **Ui** : `React.Js`, `TypeScript`, `Tailwind`, `Zustand`
 - **Server**: `Node.Js`, `TypeScript`, `Express.Js`, `Mongoose`
@@ -13,7 +14,16 @@ completed).
 ## UI
 ### Todo:
 - [x] : setup skeleton
-- [ ] : wait until server is done...
+- [x] : wait until server is done...
+- [ ] : create login
+- [ ] : test login component
+- [ ] : create new task input component
+- [ ] : update task [title, description, status] functionlity
+- [ ] : delete task 
+- [ ] : fetch all tasks
+- [ ] : tasks filter on browser
+- [ ] : write tests
+- [ ] : add some screenshots to readme
 ---
 ## Server
 ### Todo:
@@ -26,19 +36,15 @@ completed).
 - [x] : create units tests for the auth flow
 - follow TDD approach
 - [x] service: **add task**
-    `body: {title: string, description string, status: 'done'|'pending'}` + `userId from auth token`
     - [x] create unit test
     - [x] create the service
-
-- [ ] - service: **update task** 
-`body: {title: string, description string, status: 'done'|'pending', id: task._id}`
-    - [ ] create unit test
-    - [ ] create the service
-- [ ] - service: **delete task**
-    `param /{id}` + `user id from auth token to verify`
-    - [ ] create unit test
-    - [ ] create the service
-- [ ] - service: **read tasks** 
-    `get user id from token` + `fetch all tasks owned by this user id`
-    - [ ] create unit test
-    - [ ] create the service
+- [x] - service: **update task** 
+    - [x] create unit test
+    - [x] create the service
+- [x] - service: **delete task**
+    - [x] create unit test
+    - [x] create the service
+- [x] - service: **read tasks** 
+    - [x] create unit test
+    - [x] create the service
+- [ ] - document the roadmap
