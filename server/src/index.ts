@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import connectionDB from './database/config';
 import * as ROUTES from "./routes"
+import cors from "cors";
 
 const app = express();
 
@@ -10,7 +11,7 @@ dotenv.config(); // 3afak khdmi
 const PORT = process.env.PORT || 4242;
 
 app.use(express.json());
-
+app.use(cors());
 
 app.use('/api/v1/auth', ROUTES.AuthRoute);
 app.use('/api/v1/task', ROUTES.TaskRoute);
@@ -34,3 +35,4 @@ if (process.env.NODE_ENV !== 'test')
     })()
 
 export default app;
+
