@@ -6,8 +6,8 @@ import isAuthorized from '../middleware/authentication.middelware';
 
 const router = Router();
 
-router.post('/signin', Middlewares.ValidateReq(userValidatorSchema), signIn);
-router.post('/signup', Middlewares.ValidateReq(userValidatorSchema), signUp);
+router.post('/signin', Middlewares.ValidateRequest(userValidatorSchema), signIn);
+router.post('/signup', Middlewares.ValidateRequest(userValidatorSchema), signUp);
 router.get('/whoami', isAuthorized, whoAmI);
 
 export default router;

@@ -1,1 +1,1 @@
-export { default as ValidateReq } from "./validateRequest.middleware";
+export { ValidateParams, ValidateRequest } from "./validateRequest.middleware";
