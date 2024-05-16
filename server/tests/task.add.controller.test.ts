@@ -52,7 +52,6 @@ describe(`POST ${CONSTANTS.API_PREFIX}/task`, () => {
             .send(freshTask);
 
         expect(response.status).toBe(200);
-        console.log(token, user)
         expect(response.body.task.title).toBe(freshTask.title);
         expect(response.body.task.description).toBe(freshTask.description);
         expect(response.body.task.status).toBe('pending');
@@ -76,5 +75,23 @@ describe(`POST ${CONSTANTS.API_PREFIX}/task`, () => {
             path: ['title'],
             message: 'Required'
         }]);
+    });
+    it('should create a task without a description', async () => {
+        const response = await request(app)
+            .post(`${CONSTANTS.API_PREFIX}/task`)
+            .set('Authorization', `Bearer ${token}`)
+            .send({
+                title: 'Task with no description is OK'
+            });
+
+
+        expect(response.status).toBe(200);
+        expect(response.body).toMatchObject({
+            "task": {
+                "status": "pending",
+                "title": "Task with no description is OK",
+                "userId": user._id
+            }
+        });
     });
 });
