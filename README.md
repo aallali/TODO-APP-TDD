@@ -5,7 +5,22 @@ Create a CRUD application for task management that includes user authentication 
 appealing user interface. Each task should have attributes like title, description, and status (e.g., pending,
 completed).
 
-
+## Installation:
+- it is recommended to use latest nodejs stable version
+- during the development of this app, i used `node v20.13.1`
+- use the frozen lockfile to install the exact version
+```shell
+git clone https://github.com/aallali/technical-test-c4
+cd technical-test-c4
+## install and run api
+cd server 
+yarn ci
+yarn start
+## install and run ui
+cd ../ui
+yarn ci
+yarn start
+```
 ## Tech Stack
 - **Ui** : `React.Js`, `TypeScript`, `Tailwind`, `Zustand`
 - **Server**: `Node.Js`, `TypeScript`, `Express.Js`, `Mongoose`
@@ -165,4 +180,4 @@ GET     : /api/v1/task/         : fetch all tasks
 - [x] - service: **read tasks** 
     - [x] create unit test
     - [x] create the service
-- [ ] - document the roadmap
+- [x] - document the roadmap
