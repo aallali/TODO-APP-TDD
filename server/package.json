@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "ci": "yarn install --frozen-lockfile",
     "start": "nodemon",
+    "start:debug": "DEBUG=express:* nodemon",
     "test": "NODE_ENV=test jest --detectOpenHandles",
     "test:coverage": "NODE_ENV=test jest --coverage --detectOpenHandles",
     "test:watch": "NODE_ENV=test jest --watch --detectOpenHandles"
