@@ -33,6 +33,9 @@ yarn start
 <img src="./ressources/emptyTasks.png" width="600"/>
 <img src="./ressources/createTaskError.png" width="600"/>
 <img src="./ressources/tasks.png" width="600"/>
+
+- Api unit tests
+
 <img src="./ressources/test.png" width="600"/>
 
 
@@ -63,17 +66,22 @@ src
 
 5 directories, 15 files
 ```
+### Test :
+- **command: `yarn test`**
+
+<img src="./ressources/test-auth-ui.png"  />
+
 ### Todo:
 - [x] : setup skeleton
 - [x] : wait until server is done...
 - [x] : create login
-- [ ] : test login component
+- [x] : test login component
 - [x] : create new task input component
 - [x] : update task [title, description, status] functionlity
 - [x] : delete task 
 - [x] : fetch all tasks
 - [x] : tasks filter on browser
-- [ ] : ~~write tests for remaining components~~
+- [ ] : write tests for remaining components
 - [x] : add some screenshots to readme
 ---
 ## Server
@@ -117,6 +125,11 @@ PATCH   : /api/v1/task/         : update task
 DELETE  : /api/v1/task/{taskId} : delete a task
 GET     : /api/v1/task/         : fetch all tasks
 ```
+
+### Api Testing Collection
+
+- please use [this collection](./postmanCollection/requestsTests.postman_collection.json)
+
 ### Folder structure
 ```
 ├── nodemon.json
