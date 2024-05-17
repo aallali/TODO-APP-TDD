@@ -20,5 +20,5 @@ export async function deleteTask(id: string, userId: string) {
 }
 
 export async function getAllTasks(userId: string) {
-    return await Task.find({ userId }).select("-userId -__v")
+    return await Task.find({ userId }).select("-userId -__v").sort({ created_at: -1 })
 }
