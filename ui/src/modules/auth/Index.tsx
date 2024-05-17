@@ -10,18 +10,16 @@ export default function AuthForm() {
     const { setUser, setToken } = useAuthStore();
     const [username, updateUsername] = useState('');
     const [password, updatePassword] = useState('');
-
     const [isLogin, setIsLogin] = useState(true);
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (username && password && validateUsername(username) && validatepassword(password))
         if (isLogin) {
-
                 loginAPI(username, password).then(res => {
                     if (res.success) {
                         setToken(res.token)
                         whoAmI().then(res => {
-                            console.log(res.user)
                             setUser(res.user.username, res.user._id)
                         })
                     } else {
@@ -57,6 +55,7 @@ export default function AuthForm() {
                             type="text"
                             name="username"
                             placeholder="username"
+                            data-testid="username"
                             onChange={(e) => updateUsername(e.target.value)}
                         />
                         {
@@ -72,6 +71,7 @@ export default function AuthForm() {
                             type="Password"
                             name="password"
                             placeholder="*********"
+                            data-testid="password"
                             onChange={(e) => updatePassword(e.target.value)}
                         />
                         {
@@ -80,7 +80,9 @@ export default function AuthForm() {
                         }
                     </div>
                     <div className="mt-8 flex justify-center text-lg text-black">
-                        <button type="submit" className="rounded-3xl bg-yellow-400 bg-opacity-50 px-10 py-2 text-black shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600 disabled:bg-gray-600 disabled:cursor-not-allowed disabled:bg-opacity-50 disabled:backdrop-blur-md" disabled={!(validateUsername(username) && validatepassword(password))}>
+                        <button type="submit" className="rounded-3xl bg-yellow-400 bg-opacity-50 px-10 py-2 text-black shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600 disabled:bg-gray-600 disabled:cursor-not-allowed disabled:bg-opacity-50 disabled:backdrop-blur-md" 
+                        disabled={!(validateUsername(username) && validatepassword(password))}
+                        data-testid="submitBTN">
                             {
                                 isLogin ? "Login" : "Register"
 
