@@ -15,14 +15,14 @@ completed).
 ### Todo:
 - [x] : setup skeleton
 - [x] : wait until server is done...
-- [ ] : create login
+- [x] : create login
 - [ ] : test login component
-- [ ] : create new task input component
-- [ ] : update task [title, description, status] functionlity
-- [ ] : delete task 
-- [ ] : fetch all tasks
-- [ ] : tasks filter on browser
-- [ ] : write tests
+- [x] : create new task input component
+- [x] : update task [title, description, status] functionlity
+- [x] : delete task 
+- [x] : fetch all tasks
+- [x] : tasks filter on browser
+- [ ] : ~~write tests for remaining components~~
 - [ ] : add some screenshots to readme
 ---
 ## Server
